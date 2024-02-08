@@ -6,13 +6,17 @@
 <header th:replace="fragments :: header"></header>
 
 <table class="table table-striped">
-    <thead>
     <tr>
-        <th>Event Name</th>
+        <th>ID</th>
+        <td th:text="${event.id}"></td>
     </tr>
-    </thead>
-    <tr th:each="event : ${events}">
-        <td><a  th:text="${event.name}" th:href="'/events/detail?eventId='+${event.id}"></a></td>
+    <tr>
+        <th>Description</th>
+        <td th:text="${event.eventDetails.description}"></td>
+    </tr>
+    <tr>
+        <th>Contact Email</th>
+        <td th:text="${event.eventDetails.contactEmail}"></td>
     </tr>
 </table>
 
