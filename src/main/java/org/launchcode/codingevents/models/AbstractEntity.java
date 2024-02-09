@@ -5,6 +5,8 @@ import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import java.util.Objects;
 
+// This annotation indicates that this class is a superclass for JPA entities.Your use of annotations such as @MappedSuperclass, @Id, and @GeneratedValue are commonly associated with JPA (Java Persistence API),
+// which is often used in Java applications for object-relational mapping (ORM) to manage relational data in databases.
 @MappedSuperclass
 public abstract class AbstractEntity {
     @Id
@@ -14,6 +16,8 @@ public abstract class AbstractEntity {
     public int getId() {
         return id;
     }
+
+    // Override equals method to compare entities by their id
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -22,6 +26,7 @@ public abstract class AbstractEntity {
         return id == entity.id;
     }
 
+    // Override hashCode method to generate hash based on the id
     @Override
     public int hashCode() {
         return Objects.hash(id);
